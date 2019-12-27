@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="mainstyle.css">
+
+    </head>
+    <body style="margin-left:30px; margin-right: 30px;">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/axios/dist/axios.standalone.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/hmac-sha256.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/rollups/sha256.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/hmac.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/CryptoJS/components/enc-base64.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/url-template/url-template.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/sigV4Client.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/apiGatewayClient.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/simpleHttpClient.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/lib/apiGatewayCore/utils.js"></script>
+        <script type="text/javascript" src="apiGateway-js-sdk/apigClient.js"></script>
+        <script type="text/javascript" src="main.js"></script>
+
+        <h2>Search:</h2>
+        <form class="example" id="form-search">  
+            <input type="text" placeholder="Search.." id="input-search" name="search">
+            <button type="button" onclick="submitSearch(event)" name="btn-search"><i class="fa fa-search"></i></button>
+        </form>
+        
+        <form class="example" style="margin-top: 20px;">
+            <button type="button" id="recordButton" name="btn-voice" style="width:150px;">Start Recording</button>
+            <button type="button" id="stopButton" title="Stop" name="btn-voice"style="margin-left: 10px; width:150px;">
+                Stop Recording</button>
+        </form>
+
+        <ol id="recordingsList"></ol> 
+
+        <form class="example" id="form-upload">
+            <h2>Upload A File</h2>
+            <input type="file" id="input-file" multiple size="50" onchange="myFunction()">
+            <p id="demo"></p>
+            <button type="button" onclick="submitPhoto(event)" name="btn-image" style="width:150px;">Upload</button>
+        </form>
+
+        <div class="header" id="myHeader">
+            <h1>Photo Grid</h1>
+        </div>
+        <!-- Photo Grid -->
+        <div class="row">
+            <div class="column" id="imgDiv">
+                <img src="https://www.w3schools.com/w3images/wedding.jpg" style="width:25%">
+                <img src="https://www.w3schools.com/w3images/rocks.jpg" style="width:25%">
+            </div>
+        </div>
+
+        <script src="https://cdn.rawgit.com/mattdiamond/Recorderjs/08e7abd9/dist/recorder.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
